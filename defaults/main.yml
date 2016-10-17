@@ -1,0 +1,17 @@
+postfix_state: started
+postfix_mail_owner: postfix
+postfix_debug_peer_level: 2
+postfix_setgid_group: postdrop
+postfix_mydestination:
+   - $myhostname
+   - localhost.$mydomain
+   - localhost
+postfix_mynetworks:
+#  - 10.0.0.0/20
+#  - 23.29.62.128/27
+   - 77.90.198.122
+   - 10.0.0.0/8
+   - 37.115.204.199
+postfix_myhostname: mail.virgilsecurity.com
+postfix_relay_domains: 
+   - $mynetworks

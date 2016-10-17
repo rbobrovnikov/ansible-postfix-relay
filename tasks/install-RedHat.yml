@@ -1,0 +1,8 @@
+---
+
+- name: Install Postfix 
+  yum:
+   name: postfix 
+   state: present
+  notify:
+    - start postfix 

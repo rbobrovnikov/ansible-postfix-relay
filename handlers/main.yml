@@ -1,0 +1,12 @@
+---
+
+- name: start postfix
+  service:
+    name: postfix
+    state: "{{ postfix_state }}"
+    enabled: true
+
+- name: restart postfix
+  service:
+    name: postfix
+    state: restarted

@@ -1,0 +1,12 @@
+---
+
+- name: Update apt cache
+  apt:
+   update_cache: yes
+
+- name: Install Postfix
+  apt:
+   name: postfix
+   state: present
+  notify:
+    - start postfix

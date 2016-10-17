@@ -1,0 +1,23 @@
+---
+
+- name: Include RedHat specific plays
+  include: install-{{ ansible_os_family }}.yml
+  when: ansible_os_family == "RedHat"
+  notify:
+    - start postfix
+
+- name: Include Debian specific plays
+  include: install-{{ ansible_os_family }}.yml
+  when: ansible_os_family == "Debian"
+  notify:
+    - start postfix
+
+- name: Configure relay
+  template:
+    src: main.cf.j2
+    dest: /etc/postfix/main.cf
+    owner: root
+    group: root
+    mode: 0644
+  notify:
+    - restart postfix
