@@ -1,1 +1,3 @@
-# ansible-postfix-relay
+# postfix-relay
+
+A role for deploying simple Postfix smtp-relay server.
